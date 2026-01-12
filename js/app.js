@@ -22,32 +22,10 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // ==========================================
-// 2. Chat Widget Toggle Functionality
+// 2. Chat Widget Toggle Functionality (n8n)
 // ==========================================
-const chatWidget = document.getElementById('chatWidget');
-const chatBubbleBtn = document.getElementById('chatBubbleBtn');
-const openChatBtn = document.getElementById('openChatBtn');
-const closeChatBtn = document.getElementById('closeChatBtn');
-
-// Open chat widget
-function openChat() {
-    chatWidget.classList.add('active');
-    chatBubbleBtn.style.display = 'none';
-}
-
-// Close chat widget
-function closeChat() {
-    chatWidget.classList.remove('active');
-    chatBubbleBtn.style.display = 'flex';
-}
-
-// Event listeners for chat
-chatBubbleBtn.addEventListener('click', openChat);
-openChatBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openChat();
-});
-closeChatBtn.addEventListener('click', closeChat);
+// n8n chat widget handles its own UI - no custom code needed
+// The n8n chat automatically creates its own chat button and interface
 
 // ==========================================
 // 3. FAQ Accordion Toggle
@@ -77,16 +55,12 @@ const startJourneyBtn = document.getElementById('startJourneyBtn');
 const learnMoreBtn = document.getElementById('learnMoreBtn');
 
 startJourneyBtn.addEventListener('click', () => {
-    // Open chat when starting journey
-    openChat();
-    
-    // Optional: Add a welcome message
-    const chatBody = document.getElementById('chatBody');
-    const welcomeMessage = document.createElement('div');
-    welcomeMessage.className = 'chat-message bot-message fade-in';
-    welcomeMessage.innerHTML = '<p>Awesome! Let\'s start your fitness journey. What are your fitness goals? 💪</p>';
-    chatBody.appendChild(welcomeMessage);
-    chatBody.scrollTop = chatBody.scrollHeight;
+    // Scroll to fitness areas or trigger n8n chat
+    // The n8n chat widget can be opened by clicking the chat button it creates
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 learnMoreBtn.addEventListener('click', () => {
@@ -106,16 +80,9 @@ fitnessCards.forEach(btn => {
     btn.addEventListener('click', function() {
         const cardTitle = this.parentElement.querySelector('h3').textContent;
         
-        // Open chat with context
-        openChat();
-        
-        // Add contextual message
-        const chatBody = document.getElementById('chatBody');
-        const contextMessage = document.createElement('div');
-        contextMessage.className = 'chat-message bot-message fade-in';
-        contextMessage.innerHTML = `<p>Great choice! I can help you with ${cardTitle}. What would you like to know? 🎯</p>`;
-        chatBody.appendChild(contextMessage);
-        chatBody.scrollTop = chatBody.scrollHeight;
+        // n8n chat widget handles its own interactions
+        // User can click the n8n chat button to start chatting
+        console.log(`User interested in: ${cardTitle}`);
     });
 });
 
@@ -171,27 +138,10 @@ window.addEventListener('scroll', () => {
 });
 
 // ==========================================
-// 8. Chat Input Handler (Placeholder)
+// 8. Chat Input Handler (n8n)
 // ==========================================
-// Note: Actual chat functionality will be handled by n8n chatbot
-const chatInput = document.getElementById('chatInput');
-const chatSendBtn = document.getElementById('chatSendBtn');
-
-// This is a placeholder - remove or modify when integrating n8n
-chatSendBtn.addEventListener('click', () => {
-    const message = chatInput.value.trim();
-    if (message) {
-        console.log('Message to send to n8n:', message);
-        // Your n8n integration will handle this
-        chatInput.value = '';
-    }
-});
-
-chatInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        chatSendBtn.click();
-    }
-});
+// n8n chat widget handles all chat functionality
+// No custom chat input code needed
 
 // ==========================================
 // 9. Welcome Animation on Page Load
@@ -222,35 +172,113 @@ window.addEventListener('resize', initMobileMenu);
 initMobileMenu();
 
 // ==========================================
-// Helper Functions
+// AI Chat Functionality
 // ==========================================
+const chatMessages = document.getElementById('chat-messages');
+const userMessageInput = document.getElementById('user-message');
+const sendMessageBtn = document.getElementById('send-message');
+const WEBHOOK_URL = 'https://n8ngc.codeblazar.org/webhook/e8d1a378-c05e-443e-afdb-787f4b52dc57/chat';
 
-// Function to add user message to chat (for n8n integration)
-function addUserMessage(message) {
-    const chatBody = document.getElementById('chatBody');
-    const userMessage = document.createElement('div');
-    userMessage.className = 'chat-message user-message fade-in';
-    userMessage.innerHTML = `<p>${message}</p>`;
-    chatBody.appendChild(userMessage);
-    chatBody.scrollTop = chatBody.scrollHeight;
+// Add message to chat
+function addMessage(message, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = isUser ? 'user-msg' : 'bot-msg';
+    const messageParagraph = document.createElement('p');
+    messageParagraph.textContent = message;
+    messageDiv.appendChild(messageParagraph);
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// Function to add bot message to chat (for n8n integration)
-function addBotMessage(message) {
-    const chatBody = document.getElementById('chatBody');
-    const botMessage = document.createElement('div');
-    botMessage.className = 'chat-message bot-message fade-in';
-    botMessage.innerHTML = `<p>${message}</p>`;
-    chatBody.appendChild(botMessage);
-    chatBody.scrollTop = chatBody.scrollHeight;
+// Add thinking indicator
+function addThinkingIndicator() {
+    const thinkingDiv = document.createElement('div');
+    thinkingDiv.className = 'thinking-msg';
+    thinkingDiv.id = 'thinking-indicator';
+    const thinkingParagraph = document.createElement('p');
+    thinkingParagraph.textContent = 'Thinking...';
+    thinkingDiv.appendChild(thinkingParagraph);
+    chatMessages.appendChild(thinkingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return thinkingDiv;
 }
 
-// Export functions for n8n integration
-window.StayFit = {
-    openChat,
-    closeChat,
-    addUserMessage,
-    addBotMessage
-};
+// Remove thinking indicator
+function removeThinkingIndicator() {
+    const indicator = document.getElementById('thinking-indicator');
+    if (indicator) {
+        indicator.remove();
+    }
+}
 
-console.log('🎉 StayFit initialized! Ready to help users start their fitness journey.');
+// Send message to n8n
+async function sendMessage() {
+    const message = userMessageInput.value.trim();
+    
+    if (!message) return;
+    
+    // Disable input while sending
+    userMessageInput.disabled = true;
+    sendMessageBtn.disabled = true;
+    
+    // Add user message to chat
+    addMessage(message, true);
+    
+    // Clear input
+    userMessageInput.value = '';
+    
+    // Show thinking indicator
+    const thinkingIndicator = addThinkingIndicator();
+    
+    try {
+        // Send to n8n webhook
+        const response = await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                chatInput: message,
+                question: message 
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        // Remove thinking indicator
+        removeThinkingIndicator();
+        
+        // Add bot response
+        const botResponse = data.output || data.answer || data.response || 'I received your message!';
+        addMessage(botResponse, false);
+        
+    } catch (error) {
+        console.error('Error sending message:', error);
+        removeThinkingIndicator();
+        addMessage('❌ Sorry, I\'m having trouble connecting. Please check the CORS settings in n8n or try again.', false);
+    } finally {
+        // Re-enable input
+        userMessageInput.disabled = false;
+        sendMessageBtn.disabled = false;
+        userMessageInput.focus();
+    }
+}
+
+// Event listeners for chat
+if (sendMessageBtn) {
+    sendMessageBtn.addEventListener('click', sendMessage);
+}
+
+if (userMessageInput) {
+    userMessageInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+}
+
+console.log('🎉 StayFit initialized! AI Chat ready!');

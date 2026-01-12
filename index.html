@@ -6,6 +6,8 @@
     <meta name="description" content="StayFit - Your AI sports coach for personalized fitness and cardio workout plans anytime, anywhere.">
     <title>StayFit | Your Personal AI Fitness Coach</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- n8n Chat Widget CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
 </head>
 <body>
     <script src="js/script.js"></script>
@@ -153,60 +155,23 @@
         </div>
     </section>
 
-    <!-- AI Sports Coach Chat Section -->
-    <section id="ai-coach-chat" class="ai-coach-chat">
+    <!-- AI Chat Section -->
+    <section id="ai-chat" class="ai-chat-section">
         <div class="container">
-            <h2 class="section-title">Chat with Your AI Sports Coach</h2>
-            <p class="section-subtitle">Ask anything about fitness, workouts, or nutrition. Get instant personalized advice!</p>
-            
-            <div class="chat-container">
-                <div id="chat-window" class="chat-window">
-                    <div class="welcome-message">
-                        <p>👋 Welcome! I'm your AI Sports Coach. How can I help you today?</p>
+            <h2 class="section-title">Chat with AI Sports Coach</h2>
+            <div class="chat-box">
+                <div id="chat-messages" class="chat-messages">
+                    <div class="bot-msg">
+                        <p>👋 Hi! I'm your AI Sports Coach. Ask me anything about fitness, workouts, or nutrition!</p>
                     </div>
                 </div>
-                
-                <div class="chat-input-area">
-                    <input type="text" id="userInput" placeholder="Type your question here..." />
-                    <button id="sendBtn" class="btn-send">Send</button>
+                <div class="chat-input-wrapper">
+                    <input type="text" id="user-message" placeholder="Type your question here..." />
+                    <button id="send-message" class="send-btn">Send</button>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Chat Widget Area -->
-    <div id="chatWidget" class="chat-widget">
-        <div class="chat-header">
-            <div class="chat-title">
-                <span class="chat-avatar">🤖</span>
-                <div>
-                    <h4>AI Fitness Coach</h4>
-                    <p class="chat-status">Online</p>
-                </div>
-            </div>
-            <button class="chat-close" id="closeChatBtn">&times;</button>
-        </div>
-        <div class="chat-body" id="chatBody">
-            <div class="chat-message bot-message">
-                <p>Hey there! 👋 I'm your AI fitness coach. Ask me anything about workouts, nutrition, or getting started with fitness. No question is too basic!</p>
-            </div>
-            <!-- n8n chatbot will be embedded here -->
-            <div id="n8n-chat-container">
-                <!-- Your n8n AI chatbot iframe or widget will go here -->
-                <p class="chat-placeholder">Your n8n AI chatbot will be integrated here.</p>
-            </div>
-        </div>
-        <div class="chat-footer">
-            <input type="text" id="chatInput" placeholder="Ask me anything about fitness..." disabled>
-            <button id="chatSendBtn" disabled>Send</button>
-        </div>
-    </div>
-
-    <!-- Chat Bubble Button -->
-    <button class="chat-bubble" id="chatBubbleBtn">
-        <span class="chat-bubble-icon">💬</span>
-        <span class="chat-bubble-text">Chat with AI</span>
-    </button>
 
     <!-- Footer -->
     <footer class="footer">
