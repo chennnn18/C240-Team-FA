@@ -1,180 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://n8ngc.codeblazar.org; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' https://n8ngc.codeblazar.org https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data:; frame-src 'self';">
-    <meta name="description" content="StayFit - Your AI sports coach for personalized fitness and cardio workout plans anytime, anywhere.">
-    <title>StayFit | Your Personal AI Fitness Coach</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- n8n Chat Widget CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-    <script type="module">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://n8ngc.codeblazar.org; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' https://n8ngc.codeblazar.org https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data:; frame-src 'self';">
+        <meta name="description"
+            content="StayFit - Your AI sports coach for personalized fitness and cardio workout plans anytime, anywhere.">
+        <title>StayFit | Your Personal AI Fitness Coach</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- n8n Chat Widget CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
+            rel="stylesheet" />
+        <script type="module">
 	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
 	createChat({
 		webhookUrl: 'https://n8ngc.codeblazar.org/webhook/e8d1a378-c05e-443e-afdb-787f4b52dc57/chat'
 	});
     </script>
-</head>
-<body>
-    <script src="js/script.js"></script>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h1>💪 StayFit</h1>
+    </head>
+    <body>
+        <script src="js/script.js"></script>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>💪 StayFit</h1>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle"
+                    aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#fitness-areas"
+                            class="nav-link">Workouts</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
             </div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#fitness-areas" class="nav-link">Workouts</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2 class="hero-title">Your Personal AI Fitness Coach</h2>
-                <p class="hero-subtitle">Get personalized fitness and cardio workout plans anytime, anywhere. No judgment, just progress.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" id="startJourneyBtn">Start Your Fitness Journey</button>
-                    <button class="btn btn-secondary" id="learnMoreBtn">Learn More</button>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-placeholder">
-                    <span>🏃‍♂️</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fitness Areas Section -->
-    <section id="fitness-areas" class="fitness-areas">
-        <div class="container">
-            <h2 class="section-title">Choose Your Fitness Path</h2>
-            <p class="section-subtitle">Whether you're a complete beginner or looking to level up, we've got you covered.</p>
-            
-            <div class="fitness-grid">
-                <!-- Gym -->
-                <div class="fitness-card">
-                    <div class="card-icon">🏋️</div>
-                    <h3>Gym Workouts</h3>
-                    <p>Build strength with guided gym routines designed for beginners. Learn proper form and technique safely.</p>
-                    <button class="btn-card">Explore Gym Plans</button>
-                </div>
-
-                <!-- Cardio -->
-                <div class="fitness-card">
-                    <div class="card-icon">🏃</div>
-                    <h3>Cardio</h3>
-                    <p>Boost your endurance with running, cycling, and HIIT workouts. Perfect for improving heart health.</p>
-                    <button class="btn-card" onclick="window.location.href='cardio.html'">Start Cardio</button>
-                </div>
-
-                <!-- Swimming -->
-                <div class="fitness-card">
-                    <div class="card-icon">🏊</div>
-                    <h3>Swimming</h3>
-                    <p>Full-body workout that's easy on joints. Get swimming techniques and training plans for all levels.</p>
-                    <button class="btn-card">Dive In</button>
-                </div>
-
-                <!-- Home Workouts -->
-                <div class="fitness-card">
-                    <div class="card-icon">🏠</div>
-                    <h3>Home Workouts</h3>
-                    <p>No gym? No problem! Effective bodyweight exercises you can do anywhere, anytime.</p>
-                    <button class="btn-card">Work Out at Home</button>
-                </div>
-
-                <!-- Progressive Overload -->
-                <div class="fitness-card">
-                    <div class="card-icon">📈</div>
-                    <h3>Progressive Overload</h3>
-                    <p>Learn how to gradually increase intensity for continuous improvement and better results.</p>
-                    <button class="btn-card">Level Up</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">We know starting fitness can feel overwhelming. Here are answers to common questions.</p>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do I need gym experience to start?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Not at all! StayFit is designed specifically for beginners. Our AI coach will guide you step-by-step, explaining every exercise and ensuring you start safely.</p>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Your Personal AI Fitness Coach</h2>
+                    <p class="hero-subtitle">Get personalized fitness and cardio
+                        workout plans anytime, anywhere. No judgment, just
+                        progress.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary"
+                            id="startJourneyBtn">Start Your Fitness
+                            Journey</button>
+                        <button class="btn btn-secondary"
+                            id="learnMoreBtn">Learn More</button>
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What if I'm embarrassed to ask questions?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>That's exactly why we created an AI coach! Ask anything without judgment, 24/7. No question is too basic or silly.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How are workouts personalized?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Our AI learns your fitness level, goals, available equipment, and schedule to create custom plans just for you. Everything adapts as you progress.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Can I work out at home without equipment?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Absolutely! We have comprehensive bodyweight workout plans that require zero equipment. Start your fitness journey from your living room.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How often should I work out as a beginner?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We recommend starting with 3-4 sessions per week, allowing rest days for recovery. Our AI will help you build a sustainable routine that fits your schedule.</p>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <span>🏃‍♂️</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 StayFit. Your journey to fitness starts here. 💪</p>
-            <p class="footer-tagline">Built with care for fitness beginners everywhere.</p>
-        </div>
-    </footer>
+        <!-- Fitness Areas Section -->
+        <section id="fitness-areas" class="fitness-areas">
+            <div class="container">
+                <h2 class="section-title">Choose Your Fitness Path</h2>
+                <p class="section-subtitle">Whether you're a complete beginner
+                    or looking to level up, we've got you covered.</p>
 
-    <script src="js/app.js"></script>
-</body>
+                <div class="fitness-grid">
+                    <!-- Gym -->
+                    <div class="fitness-card">
+                        <div class="card-icon">🏋️</div>
+                        <h3>Gym Workouts</h3>
+                        <p>Build strength with guided gym routines designed for
+                            beginners. Learn proper form and technique
+                            safely.</p>
+                        <a class="btn-card"
+                            href="https://chennnn18.github.io/C240-FA-Gym-buddy/"
+                            target="_blank">
+                            Explore Gym Plans
+                        </a>
+                    </div>
+
+                    <!-- Cardio -->
+                    <div class="fitness-card">
+                        <div class="card-icon">🏃</div>
+                        <h3>Cardio</h3>
+                        <p>Boost your endurance with running, cycling, and HIIT
+                            workouts. Perfect for improving heart health.</p>
+                        <button class="btn-card"
+                            onclick="window.location.href='cardio.html'">Start
+                            Cardio</button>
+                    </div>
+
+                    <!-- Swimming -->
+                    <div class="fitness-card">
+                        <div class="card-icon">🏊</div>
+                        <h3>Swimming</h3>
+                        <p>Full-body workout that's easy on joints. Get swimming
+                            techniques and training plans for all levels.</p>
+                        <a class="btn-card"
+                            href="https://eugene-lin7.github.io/C240-_FA/"
+                            target="_blank">
+                            Dive In
+                        </a>
+                    </div>
+
+                    <!-- Home Workouts -->
+                    <div class="fitness-card">
+                        <div class="card-icon">🏠</div>
+                        <h3>Home Workouts</h3>
+                        <p>No gym? No problem! Effective bodyweight exercises
+                            you can do anywhere, anytime.</p>
+                        <button class="btn-card">Work Out at Home</button>
+                    </div>
+
+                    <!-- Progressive Overload -->
+                    <div class="fitness-card">
+                        <div class="card-icon">📈</div>
+                        <h3>Progressive Overload</h3>
+                        <p>Learn how to gradually increase intensity for
+                            continuous improvement and better results.</p>
+                        <button class="btn-card">Level Up</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">We know starting fitness can feel
+                    overwhelming. Here are answers to common questions.</p>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do I need gym experience to start?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Not at all! StayFit is designed specifically for
+                                beginners. Our AI coach will guide you
+                                step-by-step, explaining every exercise and
+                                ensuring you start safely.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What if I'm embarrassed to ask
+                                questions?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>That's exactly why we created an AI coach! Ask
+                                anything without judgment, 24/7. No question is
+                                too basic or silly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How are workouts personalized?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our AI learns your fitness level, goals,
+                                available equipment, and schedule to create
+                                custom plans just for you. Everything adapts as
+                                you progress.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I work out at home without
+                                equipment?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! We have comprehensive bodyweight
+                                workout plans that require zero equipment. Start
+                                your fitness journey from your living room.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How often should I work out as a
+                                beginner?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We recommend starting with 3-4 sessions per week,
+                                allowing rest days for recovery. Our AI will
+                                help you build a sustainable routine that fits
+                                your schedule.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 StayFit. Your journey to fitness starts here.
+                    💪</p>
+                <p class="footer-tagline">Built with care for fitness beginners
+                    everywhere.</p>
+            </div>
+        </footer>
+
+        <script src="js/app.js"></script>
+    </body>
 </html>
