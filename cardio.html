@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://n8ngc.codeblazar.org; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' https://n8ngc.codeblazar.org https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data:; frame-src 'self';">
+    <meta name="description" content="Cardio Workouts - Boost your endurance with running, cycling, and HIIT workouts. Perfect for improving heart health.">
+    <title>Cardio Workouts | StayFit</title>
+
+    <!-- Main CSS + Cardio CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cardio.css">
+
+    <!-- n8n Chat Widget CSS + JS -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://n8ngc.codeblazar.org/webhook/e8d1a378-c05e-443e-afdb-787f4b52dc57/chat'
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <h1>💪 StayFit</h1>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#fitness-areas" class="nav-link">Workouts</a></li>
+                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO + STATS -->
+    <section class="cardio-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">🏃 Cardio Workouts</h1>
+                <p class="hero-subtitle">
+                    Boost your endurance, improve heart health, and burn calories with simple, beginner-friendly cardio training.
+                </p>
+
+                <div class="stats-row">
+                    <div class="fitness-card stat-card">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Workout Plans</span>
+                    </div>
+                    <div class="fitness-card stat-card">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Cardio Types</span>
+                    </div>
+                    <div class="fitness-card stat-card">
+                        <span class="stat-number">All Levels</span>
+                        <span class="stat-label">Beginner to Advanced</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IS CARDIO -->
+    <section class="fitness-areas cardio-intro">
+        <div class="container">
+            <h2 class="section-title">What is Cardio?</h2>
+            <p class="intro-text">
+                Cardiovascular exercise, or cardio, is any activity that raises your heart rate and keeps it elevated for an extended period. 
+                It's one of the most effective ways to improve overall fitness, burn calories, and strengthen your heart and lungs.
+            </p>
+
+            <div class="fitness-grid">
+                <div class="fitness-card">
+                    <div class="card-icon">❤️</div>
+                    <h3>Heart Health</h3>
+                    <p>Strengthens your heart muscle and improves circulation.</p>
+                </div>
+                <div class="fitness-card">
+                    <div class="card-icon">🔥</div>
+                    <h3>Burns Calories</h3>
+                    <p>Effective for weight loss and fat burning.</p>
+                </div>
+                <div class="fitness-card">
+                    <div class="card-icon">💪</div>
+                    <h3>Builds Endurance</h3>
+                    <p>Increases stamina for daily activities.</p>
+                </div>
+                <div class="fitness-card">
+                    <div class="card-icon">😊</div>
+                    <h3>Mood Booster</h3>
+                    <p>Releases endorphins to reduce stress.</p>
+                </div>
+                <div class="fitness-card">
+                    <div class="card-icon">🧠</div>
+                    <h3>Brain Power</h3>
+                    <p>Improves cognitive function and memory.</p>
+                </div>
+                <div class="fitness-card">
+                    <div class="card-icon">😴</div>
+                    <h3>Better Sleep</h3>
+                    <p>Helps regulate sleep patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TYPES OF CARDIO -->
+    <section class="fitness-areas cardio-types">
+        <div class="container">
+            <h2 class="section-title">Types of Cardio Workouts</h2>
+            <p class="section-subtitle">Choose the cardio style that fits your goals and preferences</p>
+
+            <div class="fitness-grid">
+                <div class="fitness-card">
+                    <div class="card-icon">🏃‍♂️</div>
+                    <h3>Running &amp; Jogging</h3>
+                    <p><strong>Best for:</strong> Calorie burning, building leg strength.</p>
+                    <p><strong>Intensity:</strong> Moderate to High</p>
+                    <p><strong>Tips:</strong> Start with 15–20 mins and gradually increase pace and distance.</p>
+                </div>
+
+                <div class="fitness-card">
+                    <div class="card-icon">🚴‍♀️</div>
+                    <h3>Cycling</h3>
+                    <p><strong>Best for:</strong> Low-impact cardio, leg endurance.</p>
+                    <p><strong>Intensity:</strong> Low to High</p>
+                    <p><strong>Tips:</strong> Great if you have joint issues; resistance can be adjusted easily.</p>
+                </div>
+
+                <div class="fitness-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>HIIT</h3>
+                    <p><strong>Best for:</strong> Maximum calorie burn in less time.</p>
+                    <p><strong>Intensity:</strong> Very High</p>
+                    <p><strong>Tips:</strong> Short bursts of effort with rest; keep sessions around 15–20 mins.</p>
+                </div>
+
+                <div class="fitness-card">
+                    <div class="card-icon">🏊</div>
+                    <h3>Swimming</h3>
+                    <p><strong>Best for:</strong> Full-body workout, joint-friendly.</p>
+                    <p><strong>Intensity:</strong> Low to Moderate</p>
+                    <p><strong>Tips:</strong> Perfect for recovery days and people with knee/back pain.</p>
+                </div>
+
+                <div class="fitness-card">
+                    <div class="card-icon">🪢</div>
+                    <h3>Jump Rope</h3>
+                    <p><strong>Best for:</strong> Coordination &amp; agility.</p>
+                    <p><strong>Intensity:</strong> Moderate to High</p>
+                    <p><strong>Tips:</strong> Very portable; aim for short 5–10 min blocks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEGINNER PLANS -->
+    <section class="fitness-areas workout-plans">
+        <div class="container">
+            <h2 class="section-title">Beginner Cardio Workout Plans</h2>
+            <p class="section-subtitle">Start your cardio journey with these beginner-friendly routines</p>
+
+            <div class="fitness-grid">
+                <div class="fitness-card">
+                    <h3>Week 1–2: Building Foundation</h3>
+                    <p><strong>Day 1:</strong> 15-min brisk walk</p>
+                    <p><strong>Day 3:</strong> 10-min easy cycling</p>
+                    <p><strong>Day 5:</strong> 15-min walk/jog intervals (2 min walk, 1 min jog)</p>
+                    <p><strong>Day 6:</strong> 10-min light cardio (jump rope or dancing)</p>
+                    <p class="plan-note">💡 Focus on consistency, not intensity.</p>
+                </div>
+
+                <div class="fitness-card">
+                    <h3>Week 3–4: Increasing Intensity</h3>
+                    <p><strong>Day 1:</strong> 20-min jog/run (comfortable pace)</p>
+                    <p><strong>Day 2:</strong> 15-min HIIT (30s work / 30s rest)</p>
+                    <p><strong>Day 4:</strong> 25-min cycling (moderate)</p>
+                    <p><strong>Day 6:</strong> 20-min mixed cardio (jumping jacks, high knees, etc.)</p>
+                    <p class="plan-note">💡 You should feel challenged but still able to talk.</p>
+                </div>
+
+                <div class="fitness-card">
+                    <h3>Quick 15-Minute HIIT Workout</h3>
+                    <p><strong>Warm-up (3 mins):</strong> light jog + arm circles.</p>
+                    <p><strong>Main circuit (10 mins):</strong> 45s work / 15s rest – jumping jacks, high knees, burpees, mountain climbers.</p>
+                    <p><strong>Cool-down (2 mins):</strong> slow walk + stretching.</p>
+                    <p class="plan-note">🔥 Great on busy days – can burn 150–200 calories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIPS -->
+    <section class="fitness-areas cardio-tips">
+        <div class="container">
+            <h2 class="section-title">Essential Cardio Tips for Beginners</h2>
+
+            <div class="fitness-grid">
+                <div class="fitness-card">
+                    <h3>👟 Invest in Good Shoes</h3>
+                    <p>Proper footwear prevents injuries and gives you better support and comfort.</p>
+                </div>
+                <div class="fitness-card">
+                    <h3>🌡️ Warm Up &amp; Cool Down</h3>
+                    <p>Always spend 5–10 minutes preparing your body and stretching after.</p>
+                </div>
+                <div class="fitness-card">
+                    <h3>💧 Stay Hydrated</h3>
+                    <p>Drink water before, during and after your workout.</p>
+                </div>
+                <div class="fitness-card">
+                    <h3>📈 Progress Gradually</h3>
+                    <p>Increase time or intensity by about 10% per week to avoid injury.</p>
+                </div>
+                <div class="fitness-card">
+                    <h3>🎵 Make It Fun</h3>
+                    <p>Use music, podcasts or a workout buddy to stay consistent.</p>
+                </div>
+                <div class="fitness-card">
+                    <h3>😴 Rest &amp; Recover</h3>
+                    <p>Your body gets stronger on rest days, not just workout days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HEART RATE (this one already shows fine) -->
+    <section class="fitness-areas heart-rate">
+        <div class="container">
+            <h2 class="section-title">Understanding Target Heart Rate</h2>
+            <p class="section-subtitle">Train smarter by monitoring your heart rate zones</p>
+
+            <div class="heart-rate-content">
+                <h3 class="hr-title">How to Calculate Your Maximum Heart Rate:</h3>
+                <div class="hr-formula-card">
+                    <span>220 − Your Age = Maximum Heart Rate (MHR)</span>
+                </div>
+
+                <!-- Interactive Heart Rate Calculator -->
+                <div class="hr-calculator">
+                    <h4 class="calc-title">💓 Heart Rate Calculator</h4>
+                    <p class="calc-subtitle">Enter your age to calculate your target heart rate zones</p>
+                    
+                    <div class="calc-input-group">
+                        <label for="ageInput">Your Age:</label>
+                        <input type="number" id="ageInput" min="10" max="100" placeholder="Enter your age" />
+                        <button id="calculateBtn" class="btn-calculate">Calculate Zones</button>
+                    </div>
+
+                    <div id="calculatorResults" class="calc-results hidden">
+                        <div class="result-header">
+                            <h5>Your Heart Rate Zones</h5>
+                            <p class="result-mhr">Maximum Heart Rate: <span id="mhrValue">--</span> bpm</p>
+                        </div>
+
+                        <div class="zones-results">
+                            <div class="zone-result zone-1">
+                                <div class="zone-label">
+                                    <span class="zone-emoji">💚</span>
+                                    <strong>Zone 1: Warm-up</strong>
+                                </div>
+                                <div class="zone-range" id="zone1">--</div>
+                                <p class="zone-desc">50-60% MHR • Very comfortable, can talk easily</p>
+                            </div>
+
+                            <div class="zone-result zone-2">
+                                <div class="zone-label">
+                                    <span class="zone-emoji">💛</span>
+                                    <strong>Zone 2: Fat Burn</strong>
+                                </div>
+                                <div class="zone-range" id="zone2">--</div>
+                                <p class="zone-desc">60-70% MHR • Comfortable, steady breathing</p>
+                            </div>
+
+                            <div class="zone-result zone-3">
+                                <div class="zone-label">
+                                    <span class="zone-emoji">🧡</span>
+                                    <strong>Zone 3: Aerobic</strong>
+                                </div>
+                                <div class="zone-range" id="zone3">--</div>
+                                <p class="zone-desc">70-80% MHR • Moderate effort, short sentences</p>
+                            </div>
+
+                            <div class="zone-result zone-4">
+                                <div class="zone-label">
+                                    <span class="zone-emoji">❤️</span>
+                                    <strong>Zone 4: Anaerobic</strong>
+                                </div>
+                                <div class="zone-range" id="zone4">--</div>
+                                <p class="zone-desc">80-90% MHR • Hard effort, difficult to talk</p>
+                            </div>
+
+                            <div class="zone-result zone-5">
+                                <div class="zone-label">
+                                    <span class="zone-emoji">🔴</span>
+                                    <strong>Zone 5: Maximum</strong>
+                                </div>
+                                <div class="zone-range" id="zone5">--</div>
+                                <p class="zone-desc">90-100% MHR • Maximum effort, short bursts only</p>
+                            </div>
+                        </div>
+
+                        <div class="calc-note">
+                            💡 <strong>Tip:</strong> Beginners should focus on Zones 1-3 for most workouts!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cardio-cta">
+        <div class="container">
+            <h2>Ready to Start Your Cardio Journey?</h2>
+            <p>Get personalized cardio plans tailored to your fitness level and goals!</p>
+            <div class="cta-buttons">
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 StayFit. Your journey to fitness starts here. 💪</p>
+            <p class="footer-tagline">Cardio Module - Built with care for fitness beginners everywhere.</p>
+        </div>
+    </footer>
+
+    <script src="js/cardio.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+/* Cardio page specific styles */
+
+/* HERO */
+
+.cardio-hero {
+    background: linear-gradient(135deg, #0f172a, #1d4ed8);
+    color: #ffffff;
+    padding: 5rem 0 3rem;
+}
+
+.cardio-hero .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cardio-hero .hero-title {
+    font-size: clamp(2.4rem, 3vw, 3rem);
+    margin-bottom: 0.75rem;
+}
+
+.cardio-hero .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Hero stats row uses same card style as homepage */
+
+/* Hero stats row */
+.stats-row {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+}
+
+/* Make stat cards look like solid cards with dark text */
+.stat-card {
+    background: #f9fafb;
+    color: #111827;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    min-width: 180px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+}
+
+/* Big number + smaller label */
+.stat-number {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* Make intro / other sections reuse main section background */
+
+.cardio-intro,
+.cardio-types,
+.workout-plans,
+.cardio-tips,
+.heart-rate {
+    background-color: #f9fafb;
+}
+
+/* Extra styling for heart-rate formula card */
+
+.hr-formula-card {
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f97316, #0ea5e9);
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Heart Rate Calculator */
+.hr-calculator {
+    margin-top: 3rem;
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calc-title {
+    font-size: 1.8rem;
+    color: #FF6B35;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.calc-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.calc-input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.calc-input-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.calc-input-group input {
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    width: 150px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.calc-input-group input:focus {
+    outline: none;
+    border-color: #FF6B35;
+}
+
+.btn-calculate {
+    background: linear-gradient(135deg, #FF6B35, #1AA7EC);
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-calculate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+.btn-calculate:active {
+    transform: translateY(0);
+}
+
+/* Calculator Results */
+.calc-results {
+    margin-top: 2rem;
+    animation: fadeInUp 0.5s ease;
+}
+
+.calc-results.hidden {
+    display: none;
+}
+
+.result-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #FF6B35, #1AA7EC);
+    border-radius: 15px;
+    color: white;
+}
+
+.result-header h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-mhr {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.result-mhr span {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Zone Results */
+.zones-results {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.zone-result {
+    background: #f8f9fa;
+    padding: 1.2rem;
+    border-radius: 12px;
+    border-left: 5px solid;
+    transition: all 0.3s ease;
+}
+
+.zone-result:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.zone-1 { border-left-color: #2DD881; }
+.zone-2 { border-left-color: #FFD700; }
+.zone-3 { border-left-color: #FF9500; }
+.zone-4 { border-left-color: #FF3B30; }
+.zone-5 { border-left-color: #8B0000; }
+
+.zone-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.zone-emoji {
+    font-size: 1.5rem;
+}
+
+.zone-label strong {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.zone-range {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FF6B35;
+    margin: 0.5rem 0;
+}
+
+.zone-desc {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.calc-note {
+    background: #FFF9E6;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #FFD700;
+    border-radius: 8px;
+    color: #666;
+    font-style: italic;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive for calculator */
+@media (max-width: 768px) {
+    .hr-calculator {
+        padding: 1.5rem;
+    }
+
+    .calc-input-group {
+        flex-direction: column;
+    }
+
+    .calc-input-group input {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .btn-calculate {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* CTA */
+
+.cardio-cta {
+    padding: 3rem 0;
+    background: #0b1120;
+    color: #e5e7eb;
+    text-align: center;
+}
+
+.cardio-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cardio-cta p {
+    margin-bottom: 1.25rem;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.btn {
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: #0ea5e9;
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    color: #e5e7eb;
+}
